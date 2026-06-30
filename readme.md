@@ -284,37 +284,7 @@ Press:
 w
 ```
 
----
 
-## Build APK
-
-For a proper APK build, use EAS Build.
-
-Install EAS CLI:
-
-```bash
-npm install -g eas-cli
-```
-
-Log in:
-
-```bash
-eas login
-```
-
-Configure the project:
-
-```bash
-eas build:configure
-```
-
-Build Android:
-
-```bash
-eas build -p android
-```
-
-Do not upload keystore files to GitHub.
 
 ---
 
