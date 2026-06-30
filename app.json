@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "TacMed Calculator",
+    "slug": "tacmed-calculator",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B1117"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.tacmed.calculator",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0B1117"
+      }
+    }
+  }
+}
