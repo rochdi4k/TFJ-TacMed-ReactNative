@@ -2,27 +2,27 @@
 
 ## Supported Versions
 
-This project is currently in early development.
+TFJ TacMed React Native is currently in early development.
 
 | Version | Supported |
 | ------- | --------- |
 | v0.1.x  | Yes       |
 
-Older experimental builds may not receive security updates.
+Experimental builds, old APKs, and unfinished branches may not receive security updates.
 
 ---
 
 ## Reporting a Security Issue
 
-If you find a security issue, please do not open a public issue with exploit details.
+Please do **not** open a public GitHub issue for exploitable security problems.
 
-Instead, report it privately to the repository owner.
+Report security issues privately to the repository owner.
 
 Include:
 
 - A clear description of the issue
-- Steps to reproduce
-- Affected files or screens
+- Steps to reproduce it
+- Affected files, screens, or features
 - Possible impact
 - Screenshots or logs if useful
 - Suggested fix, if available
@@ -33,39 +33,38 @@ Include:
 
 Security issues may include:
 
-- Exposure of secrets, tokens, or private keys
+- Exposure of secrets, tokens, API keys, or signing keys
 - Accidental upload of keystore files
+- Unsafe dependency vulnerabilities
 - Unsafe handling of user data
-- Dependency vulnerabilities with real impact
-- App behavior that could lead to unsafe medication display
-- Calculation bugs that produce incorrect dose, volume, vial, or remaining-volume output
-- Incorrect route handling, such as mixing IV and IM values
+- App behavior that could cause unsafe medication display
+- Calculation bugs affecting dose, volume, vial count, or remaining volume
+- Incorrect route handling, such as IV and IM values being mixed
 - Missing or misleading safety warnings
 
 ---
 
 ## Medical Safety Issues
 
-Because this project involves medication calculations, some bugs are treated as safety issues.
+Because this app displays medication-reference calculations, some medical-data bugs are treated as safety issues.
 
 Examples:
 
 - Wrong medication concentration
 - Wrong unit conversion
 - mg/mcg conversion error
-- Incorrect vial count
-- Incorrect remaining volume
 - Incorrect max dose cap
+- Incorrect vial or ampule count
+- Incorrect remaining-volume result
 - IV dose displayed as IM dose
 - IM dose displayed as IV dose
-- Missing route distinction
 - Medication data copied incorrectly from the reference sheet
 
 If you find one of these issues, report it immediately.
 
 ---
 
-## Sensitive Data
+## Sensitive Data Rules
 
 Do not upload or commit:
 
@@ -82,15 +81,15 @@ Keystore files
 APK signing credentials
 ```
 
-The `.gitignore` file should block common sensitive files, but contributors are still responsible for checking their commits.
+The `.gitignore` file should block common sensitive files, but contributors are still responsible for checking staged files before committing.
 
 ---
 
 ## Dependency Security
 
-This project uses npm packages.
+This project uses npm dependencies.
 
-To inspect dependencies, run:
+To inspect dependencies:
 
 ```bash
 npm audit
@@ -104,50 +103,17 @@ npm audit fix --force
 
 unless you understand the breaking changes.
 
-Forced dependency upgrades may break Expo or React Native compatibility.
-
----
-
-## Recommended Local Checks
-
-Before pushing changes:
-
-```bash
-git status
-git diff
-npm install
-npm start
-```
-
-Check that no sensitive files are staged:
-
-```bash
-git diff --cached --name-only
-```
-
-Make sure these are not included:
-
-```text
-node_modules/
-.expo/
-dist/
-web-build/
-*.apk
-*.aab
-*.jks
-*.keystore
-.env
-```
+Forced dependency upgrades can break Expo or React Native compatibility.
 
 ---
 
 ## APK and Release Security
 
-Do not commit APK or AAB files directly to the repository.
+Do not commit APK or AAB files directly to the source repository.
 
 Use GitHub Releases for APK downloads.
 
-Never upload signing keys or keystore passwords.
+Never upload signing keys, keystore files, or keystore passwords.
 
 Recommended release asset naming:
 
@@ -159,11 +125,11 @@ TFJ-TacMed-v0.1.0.apk
 
 ## Safety Disclaimer
 
-TFJ TacMed is a software reference calculator based on a provided medication sheet.
+TFJ TacMed is a software reference calculator based on a medication sheet and inspired by Arma 3 Advanced Combat Medicine mod gameplay.
 
-It is not a substitute for official medical protocols, authorized clinical guidance, or qualified medical supervision.
+It is not a substitute for official medical protocols, authorized clinical guidance, qualified medical supervision, or real emergency medical training.
 
-All medication values, routes, concentrations, and dose limits must be verified before real use.
+All medication values, routes, concentrations, and dose limits must be verified before any real-world use.
 
 ---
 
@@ -173,9 +139,9 @@ Security and safety reports will be reviewed as soon as possible.
 
 Confirmed issues may result in:
 
-- Documentation updates
 - Medication data corrections
 - Dose calculation fixes
+- Documentation updates
 - Dependency updates
-- New release versions
-- Public advisory notes if needed
+- New releases
+- Public advisory notes, if needed
